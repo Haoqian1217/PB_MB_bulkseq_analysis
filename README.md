@@ -122,7 +122,26 @@ The PCA showed clear biological separation by analysis group. Additional PCA plo
 
 ### 04_deseq2_pb_vs_mb_nonWNT_nonSHH.R
 
-This script performs differential expression analysis between PB and MB_nonWNT_nonSHH using QC-filtered raw counts. DESeq2 was used with `analysis_group` as the design variable. `MB_nonWNT_nonSHH` was set as the reference group, so positive log2 fold changes indicate genes with higher expression in PB.
+This script performs differential expression analysis between PB and MB_nonWNT_nonSHH using QC-filtered raw counts. DESeq2 was used with `analysis_group` as the design variable. `MB_nonWNT_nonSHH` was set as the reference group, so positive log2 fold changes indicate higher expression in PB.
+
+#### Comparison
+
+| Group | Sample count |
+|---|---:|
+| PB | 23 |
+| MB_nonWNT_nonSHH | 192 |
+| Total | 215 |
+
+#### DESeq2 summary
+
+| Category | Gene count |
+|---|---:|
+| Up in PB | 9,172 |
+| Up in MB_nonWNT_nonSHH | 7,437 |
+| Not significant | 32,540 |
+| Not tested / low-count filtered | 7,719 |
+
+DESeq2 identified broad transcriptional differences between PB and MB_nonWNT_nonSHH. These gene-level results will be interpreted further at the pathway and gene-program level rather than relying only on individual top-ranked genes.
 
 #### Outputs
 
@@ -130,6 +149,9 @@ This script performs differential expression analysis between PB and MB_nonWNT_n
 - `results/deseq2/DESeq2_PB_vs_MB_nonWNT_nonSHH_normalized_counts.csv`
 - `results/tables/DESeq2_PB_vs_MB_nonWNT_nonSHH_summary.csv`
 
+#### Volcano plot
 
+The volcano plot provides an overview of gene-level differential expression between PB and MB_nonWNT_nonSHH. It is used as a summary visualization, while biological interpretation will be performed at the pathway and gene-program level.
 
+![Volcano plot](results/figures/Volcano_PB_vs_MB_nonWNT_nonSHH.png)
 
