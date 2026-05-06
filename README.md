@@ -17,9 +17,11 @@ PB_MB_bulkseq_analysis/
 │   ├── 01_data_loading_and_metadata.R
 │   ├── 02_count_matrix_integration.R
 │   ├── 03_qc_and_pca.R
-│   └── 04_deseq2_pb_vs_mb_nonWNT_nonSHH.R
+│   ├── 04_deseq2_pb_vs_mb_nonWNT_nonSHH.R
 │   └── 05_exploratory_pathway_analysis.R
 ├── results/
+│   ├── deseq2/
+│   ├── pathway/
 │   ├── figures/
 │   └── tables/
 └── notes/
