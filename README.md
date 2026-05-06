@@ -114,18 +114,21 @@ Only one sample was removed during QC, and the overall library size distribution
 - `results/figures/PCA_QC_overview_after_QC.png`
 
 #### PCA overview
-VST-based PCA was used to evaluate sample-level structure after QC. PCA plots were colored by:
+VST-based PCA was used to evaluate sample-level structure after QC. PCA plots were colored by analysis group, sequencing platform, tissue preservation method, and dataset source.
 
-- analysis group
-- sequencing platform
-- tissue preservation method
-- dataset source
+The PCA showed clear biological separation by analysis group. Additional PCA plots colored by technical variables showed no strong global separation by sequencing platform, tissue preservation method, or dataset source, suggesting that technical batch effects are unlikely to be the dominant driver of the overall expression structure.
 
-The PCA showed clear biological separation by analysis group. Additional PCA plots were used to inspect whether sequencing platform, tissue preservation, or dataset source contributed to sample clustering.
+![PCA QC overview](results/figures/PCA_QC_overview_after_QC.png)
 
+### 04_deseq2_pb_vs_mb_nonWNT_nonSHH.R
 
+This script performs differential expression analysis between PB and MB_nonWNT_nonSHH using QC-filtered raw counts. DESeq2 was used with `analysis_group` as the design variable. `MB_nonWNT_nonSHH` was set as the reference group, so positive log2 fold changes indicate genes with higher expression in PB.
 
+#### Outputs
 
+- `results/deseq2/DESeq2_PB_vs_MB_nonWNT_nonSHH.csv`
+- `results/deseq2/DESeq2_PB_vs_MB_nonWNT_nonSHH_normalized_counts.csv`
+- `results/tables/DESeq2_PB_vs_MB_nonWNT_nonSHH_summary.csv`
 
 
 
