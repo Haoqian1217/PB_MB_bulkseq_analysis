@@ -18,6 +18,7 @@ PB_MB_bulkseq_analysis/
 │   ├── 02_count_matrix_integration.R
 │   ├── 03_qc_and_pca.R
 │   └── 04_deseq2_pb_vs_mb_nonWNT_nonSHH.R
+│   └── 05_exploratory_pathway_analysis.R
 ├── results/
 │   ├── figures/
 │   └── tables/
@@ -31,6 +32,7 @@ PB_MB_bulkseq_analysis/
 | 02_count_matrix_integration.R | Merge count matrices using common gene symbols |
 | 03_qc_and_pca.R | Perform QC, outlier removal, VST transformation, and PCA |
 | 04_deseq2_pb_vs_mb_nonWNT_nonSHH.R | Run DESeq2 differential expression analysis |
+| 05_exploratory_pathway_analysis.R | Explore pathway and lineage-program differences between PB and MB_nonWNT_nonSHH |
 
 ## Workflow Overview
 1. **Data Loading:** Load PB, RB, and MB HTSeq raw count matrices and sample metadata  
@@ -156,9 +158,31 @@ The volcano plot provides an overview of gene-level differential expression betw
 
 ![Volcano plot](results/figures/Volcano_PB_vs_MB_nonWNT_nonSHH.png)
 
-### Next step: pathway / gene-program interpretation
+### 05_exploratory_pathway_analysis.R
 
-The preprocessing, QC, PCA, and initial DESeq2 comparison have been completed. The next step is to interpret the DESeq2-ranked genes at the pathway and gene-program level, guided by the biological questions of the project, such as developmental, neuronal/retinal, cell-cycle, and MYC-related transcriptional programs.
+This script performs exploratory pathway and gene-program analysis using direction-specific DESeq2 gene lists. Genes higher in PB and genes higher in MB_nonWNT_nonSHH are analyzed separately to identify biological programs that differ between the two tumor groups.
+
+This analysis is intended to generate hypotheses related to tumor initiation, cell-of-origin, and mechanisms of photoreceptor-like lineage identity, rather than to provide final biological conclusions.
+
+#### Outputs
+
+- `results/gene_lists/up_in_PB_genes.txt`
+- `results/gene_lists/up_in_MB_nonWNT_nonSHH_genes.txt`
+- `results/pathway/up_in_PB_GO_BP.csv`
+- `results/pathway/up_in_MB_nonWNT_nonSHH_GO_BP.csv`
+- `results/pathway/gene_id_mapping_summary.csv`
+- `results/figures/GO_BP_up_in_PB_dotplot.png`
+- `results/figures/GO_BP_up_in_MB_nonWNT_nonSHH_dotplot.png`
+
+#### Preliminary GO Biological Process enrichment
+
+GO Biological Process enrichment was performed separately for genes higher in PB and genes higher in MB_nonWNT_nonSHH.
+
+![GO BP up in PB](results/figures/GO_BP_up_in_PB_dotplot.png)
+
+![GO BP up in MB_nonWNT_nonSHH](results/figures/GO_BP_up_in_MB_nonWNT_nonSHH_dotplot.png)
+
+Preliminary enrichment suggests that PB-up genes are enriched for immune, inflammatory, adhesion, and antigen-presentation-related processes, whereas MB_nonWNT_nonSHH-up genes are enriched for neuronal/synaptic adhesion, cell-cycle, chromosome segregation, and DNA replication programs. These results are exploratory and will require biological interpretation in relation to the project focus.
 
 
 
