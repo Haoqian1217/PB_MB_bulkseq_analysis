@@ -87,12 +87,10 @@ This script loads PB, RB, and MB count matrices and sample metadata, assigns ana
 
 ### 02_count_matrix_integration.R
 
-This script loads PB, RB, and MB raw count matrices, identifies common gene symbols across datasets, merges count matrices into a unified raw count matrix, and exports integration summary tables.
+This script loads PB, RB, and MB raw count matrices, identifies common gene symbols across datasets, merges count matrices into a unified raw count matrix, and exports integration summary tables. The merged count matrix contains 59,050 common genes and 440 samples. The additional first column stores gene symbols, resulting in 441 total columns in the exported CSV file.
 
 #### Outputs
 
-The merged count matrix contains 59,050 common genes and 440 samples.  
-The additional first column stores gene symbols, resulting in 441 total columns in the exported CSV file.
 - `results/tables/PB_RB_MB_merged_counts_raw.csv`
 - `results/tables/count_matrix_integration_summary.csv`
 
