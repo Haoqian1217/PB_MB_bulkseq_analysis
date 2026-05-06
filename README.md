@@ -148,10 +148,20 @@ DESeq2 identified broad transcriptional differences between PB and MB_nonWNT_non
 - `results/deseq2/DESeq2_PB_vs_MB_nonWNT_nonSHH.csv`
 - `results/deseq2/DESeq2_PB_vs_MB_nonWNT_nonSHH_normalized_counts.csv`
 - `results/tables/DESeq2_PB_vs_MB_nonWNT_nonSHH_summary.csv`
+- `results/figures/Volcano_PB_vs_MB_nonWNT_nonSHH.png`
 
 #### Volcano plot
 
 The volcano plot provides an overview of gene-level differential expression between PB and MB_nonWNT_nonSHH. It is used as a summary visualization, while biological interpretation will be performed at the pathway and gene-program level.
 
 ![Volcano plot](results/figures/Volcano_PB_vs_MB_nonWNT_nonSHH.png)
+
+### Next step: pathway / gene-program interpretation
+
+The preprocessing, QC, PCA, and initial DESeq2 comparison have been completed. The next step is to interpret the DESeq2-ranked genes at the pathway and gene-program level, guided by the biological questions of the project, such as developmental, neuronal/retinal, cell-cycle, and MYC-related transcriptional programs.
+
+
+
+
+
 
