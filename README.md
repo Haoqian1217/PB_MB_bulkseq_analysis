@@ -18,7 +18,7 @@ Compare PB with MB_nonWNT_nonSHH from the same St. Jude platform.
 
 ### Step 2. Subgroup-refined comparison
 
-Use external MB datasets with explicit subgroup annotation.
+Select some feature that can use for grouping
 
 ## Repository Structure
 
